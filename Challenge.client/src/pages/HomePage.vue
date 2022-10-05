@@ -1,12 +1,13 @@
 <template>
-{{PersonInfo.Name}}
+  <div class="bg-info">{{persons}}</div>
 </template>
 
 <script>
-import { onMounted } from '@vue/runtime-core';
+import { computed, onMounted } from '@vue/runtime-core';
 import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
 import { personInfoService } from '../services/PersonInfoService';
+import { AppState } from '../AppState';
 
 export default {
   setup() {
@@ -20,9 +21,11 @@ export default {
     }
 
     onMounted(() => {
-      GetAll();
+      getPersonInfo();
     });
-    return {}
+    return {
+      persons: computed(()=> AppState.personInfo)
+    }
   }
 }
 </script>

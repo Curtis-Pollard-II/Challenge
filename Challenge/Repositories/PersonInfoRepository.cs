@@ -16,7 +16,7 @@ namespace Challenge.Repositories
                 string json = r.ReadToEnd();
                 incomingData = JsonSerializer.Deserialize<List<PersonInfo>>(json);
             }
-        return incomingData;
+        return <;
         }
     }
 }
