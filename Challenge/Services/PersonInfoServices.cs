@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Challenge.Models;
 using Challenge.Repositories;
 
 namespace Challenge.Services
@@ -15,7 +15,7 @@ namespace Challenge.Services
 
         internal List<PersonInfo> GetAll()
         {
-            throw new NotImplementedException();
+            return _PIRepo.GetAll();
         }
     }
 }

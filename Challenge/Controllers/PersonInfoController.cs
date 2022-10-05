@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Challenge.Models;
 using Challenge.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ namespace Challenge.Controllers
 
         [HttpGet]
 
-        public async ActionResult<List<PersonInfo>> GetAll()
+        public ActionResult<List<PersonInfo>> GetAll()
         {
             try 
             {
