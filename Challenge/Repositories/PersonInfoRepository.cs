@@ -14,7 +14,9 @@ namespace Challenge.Repositories
             using (StreamReader r = new StreamReader("TestData.json"))
             {
                 string json = r.ReadToEnd();
+                json = json.Replace("SKU Number", "SKU_Number");
                 incomingData = JsonSerializer.Deserialize<List<PersonInfo>>(json);
+                // 
             }
             if (incomingData != null && incomingData.Count > 0){
             }

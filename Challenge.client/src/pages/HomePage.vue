@@ -1,6 +1,23 @@
 <template>
-   <div class="bg-info">
-      <div v-for="p in persons" :key="p.id">
+  <div class="row">
+    <div class="col-md-2 p-1">
+      <button class="btn btn-rounded btn-pill btn-primary">All Records</button>
+    </div>
+    <div class="col-md-2 p-1">
+      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
+    </div>
+    <div class="col-md-2 p-1">
+      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
+    </div>
+    <div class="col-md-2 p-1">
+      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
+    </div>
+    <div class="col-md-2 p-1">
+      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
+    </div>
+  </div>
+   <div class="row bg-info">
+      <div class="col-md-4" v-for="p in persons" :key="p.id">
         <PersonCard :persons="p" />
       </div>
     </div>
