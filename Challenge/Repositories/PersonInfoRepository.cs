@@ -16,7 +16,9 @@ namespace Challenge.Repositories
                 string json = r.ReadToEnd();
                 incomingData = JsonSerializer.Deserialize<List<PersonInfo>>(json);
             }
-        return <;
+            if (incomingData != null && incomingData.Count > 0){
+            }
+        return incomingData;
         }
     }
 }

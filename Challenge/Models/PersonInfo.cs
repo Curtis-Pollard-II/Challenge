@@ -1,18 +1,3 @@
-// var incomingData = new List<PersonInfo>();
-
-// using (StreamReader r = new StreamReader("TestData.json"))
-// {
-//     string json = r.ReadToEnd();
-//     incomingData = JsonSerializer.Deserialize<List<PersonInfo>>(json);
-// }
-
-// if (incomingData != null && incomingData.Count > 0){
-//     foreach (var personInfo in incomingData)
-//     {
-//         Console.WriteLine($"{personInfo.EventDate}");
-//     }
-// }
-
 namespace Challenge.Models
 {
     public record struct PersonInfo 
@@ -32,3 +17,7 @@ namespace Challenge.Models
 );
     
 }
+
+// {var SKU_Number = ["SKU Number"]}
+        // [JsonPropertyName("SKU Number")]
+        // [JsonProperty(SKU_Number = "SKU Number")]
