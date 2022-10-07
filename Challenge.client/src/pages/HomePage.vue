@@ -1,25 +1,16 @@
 <template>
-  <div class="row">
-    <div class="col-md-2 p-1">
-      <button class="btn btn-rounded btn-pill btn-primary">All Records</button>
-    </div>
-    <div class="col-md-2 p-1">
-      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
-    </div>
-    <div class="col-md-2 p-1">
-      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
-    </div>
-    <div class="col-md-2 p-1">
-      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
-    </div>
-    <div class="col-md-2 p-1">
-      <button class="btn btn-rounded btn-pill btn-primary">Get all Data</button>
-    </div>
+  <div class="row p-4">
+      <button @click="isShow = !isShow" class="col-3 btn btn-rounded btn-pill btn-primary p-3">All Records</button>
   </div>
-   <div class="row bg-info">
-      <div class="col-md-4" v-for="p in persons" :key="p.id">
+
+    <div v-show="isShow" class="row bg-info">
+      <div class="col-md-3" v-for="p in persons" :key="p.id">
         <PersonCard :persons="p" />
       </div>
+    </div>
+
+    <div>
+      
     </div>
 </template>
 
@@ -32,6 +23,12 @@ import { AppState } from '../AppState';
 import PersonCard from '../components/PersonCard.vue';
 
 export default {
+  name: "ToggleDiv",
+  data: function () {
+    return {
+      isShow: true,
+    };
+  },
     setup() {
         async function getPersonInfo() {
             try {
@@ -46,7 +43,7 @@ export default {
             getPersonInfo();
         });
         return {
-            persons: computed(() => AppState.personInfo)
+           persons: computed(()=> AppState.personInfo)
         };
     },
     components: { PersonCard }
